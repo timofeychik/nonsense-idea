@@ -1,15 +1,15 @@
 import React from 'react';
-import md5 from 'md5';
-
+import logo from './logo.svg';
 import './App.css';
 
-import logo from './logo.svg';
+import md5 from 'md5';
 
 const SYMBOLS = 'qwertyuiopasdfghjklzxcvbnm1234567890';
 const ELEMENTS = '■□▢▣▤▥▦▧▨▩■□▢▣▤▥▦▧▨▩■□▢▣▤▥▦▧▨▩▤▥▦▧▨▩';
 
 interface IState {
   value: string;
+  valueMD5: string;
   valueMD5: string;
 }
 
@@ -34,8 +34,8 @@ class App extends React.Component<any, IState> {
 
     console.log('middleMode=', middleMode);
     console.log('limit=', limit);
-    console.log(SYMBOLS);
-    console.log(ELEMENTS);
+    // console.log(SYMBOLS);
+    // console.log(ELEMENTS);
     // console.log(md5('textmessage'));
   };
 
@@ -58,15 +58,14 @@ class App extends React.Component<any, IState> {
           <img src={logo} className="App-logo" alt="logo" />
           <p>{valueMD5}</p>
           <div>
-            <input value={value} onChange={this.handleChange} />
+            <input value={value} onChange={this.handleChange}></input>
           </div>
 
-          <span />
           <div />
         </header>
       </div>
     );
-  }
+  }     
 }
 
 export default App;
